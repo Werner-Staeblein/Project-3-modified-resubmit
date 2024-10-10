@@ -96,6 +96,10 @@ def ask_yes_no_question(prompt):
 def start_game(secret_city, username):
     """
     Step 1 for start of game as per functions above: Start the hangman game.
+    Input validation for length of input (no more than one character) and input
+    validation for the input to be alpha, i.e. a character. The "try" block
+    includes user input validation. The "except" is executed when user makes
+    invalid input (such as two characters/numbers)
     """
     guessed_correctly = False
 
@@ -107,34 +111,48 @@ def start_game(secret_city, username):
 
         while (remaining_attempts > 0 and
                len(guessed_letters) < len(unique_secret_letters)):
-            guess = input("Guess a letter of the secret city: ").upper()
-            guess_in_secret_word = is_guess_in_secret_word(guess, secret_city)
+            try:
+                guess = input("Guess a letter of the secret city: ").upper()
 
-            if guess_in_secret_word:
+                # Input validation (<2 characters/must be characters)
 
-                if guess in guessed_letters:
-                    print("You have already guessed the letter {}"
-                          .format(guess))
+                if len(guess) != 1 or not guess.isalpha():
+                    raise ValueError(
+                        "Input not valid! Please enter a single letter (a-z)."
+                    )
+
+                guess_in_secret_word = is_guess_in_secret_word(
+                    guess, secret_city
+                )
+
+                if guess_in_secret_word:
+                    if guess in guessed_letters:
+                        print("You have already guessed the letter {}"
+                              .format(guess))
+                    else:
+                        print("Yes! The letter {} is part of the secret city"
+                              .format(guess))
+                        guessed_letters += guess
                 else:
-                    print("Yes! The letter {} is part of the secret city"
+                    print("No! The letter {} is not part of the secret city"
                           .format(guess))
-                    guessed_letters += guess
+                    remaining_attempts -= 1
 
-            else:
-                print("No! The letter {} is not part of the secret city"
-                      .format(guess))
-                remaining_attempts -= 1
+                print("\n{} attempts remaining\n".format(remaining_attempts))
+                print(hangman_stages.get_hangman_stage(remaining_attempts))
+                print_secret_word(secret_city, guessed_letters)
+                print("\n\nNumber of correct letters guessed: {}\n".format(
+                    len(guessed_letters)))
 
-            print("\n{} attempts remaining\n".format(remaining_attempts))
-            print(hangman_stages.get_hangman_stage(remaining_attempts))
-            print_secret_word(secret_city, guessed_letters)
-            print("\n\nNumber of correct letters guessed: {}\n".format(
-                len(guessed_letters)))
+                if len(set(guessed_letters)) == len(set(secret_city)):
+                    print("Seems you are a master in geography!\n")
+                    guessed_correctly = True
+                    break
 
-            if len(set(guessed_letters)) == len(set(secret_city)):
-                print("Seems you are a master in geography!\n")
-                guessed_correctly = True
-                break
+            # the except block is executed when user makes invalid entry
+            # the error message for user is stored in ValueError
+            except ValueError as e:
+                print(e)
 
         else:
             if not guessed_correctly:
