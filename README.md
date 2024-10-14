@@ -240,10 +240,9 @@ Testing for user input of username was done extensively. Validation of username 
 
 - **Deployment on Heroku**
 
-The website is deployed with Heroku. Heroku is a cloud platform as a service (PaaS) that allows to deploy applications in the cloud. 																				
-                                                                                
-To deploy the website from the GitHub repository to Heroku, several steps need to be taken as follows:																				
-                                                                                
+The website is deployed with Heroku. Heroku is a cloud platform as a service (PaaS) that allows to deploy applications in the cloud.
+
+To deploy the website from the GitHub repository to Heroku, several steps need to be taken as follows:																	                                                                          
 1. Using the command pip freeze > requirements.txt, a list of requirements in the requirements.txt is created. The command pip freeze generates a list of installed Python packages including their versions and the redirection operator ensures that the output of the command will be placed into the requirements.txt file.
 
 **Special attention**: the pip freeze command used in VS Code may create a list of dependencies that are not needed for deployment. Rather, VS Code is adding TOO MANY dependencies that may make deployment impossible on Heroku. The key dependency for this project is colorama. Ensure that only this dependency is shown in the requirements.txt file once pip freeze > requirements.txt was completed in either VS Code or GitPod
