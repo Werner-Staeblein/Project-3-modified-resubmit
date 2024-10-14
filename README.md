@@ -206,9 +206,27 @@ In the final testing, I included all cities from capitalcities.py. Until then, I
 
 ![Fixed_Bug](documentation/readme/fixed_bugs.png)
 
+### Fixed bugs on resubmit
+
+User input such as blank or invalid input do not reduce the turns for the game any longer. So, when a user input is a guess with either a number, special character or two (instead of one) alphabetic character, the number of turns (number of attempts) is no longer reduced. Example: User enters number of 1 as a guess. Result is that the user keeps its numbers of attempts to guess the secret city. Same is true if user was to enter something other than a single character (such as special characters). For this purpose, an input validation was included in the start_game function
+    
+   - This line checks two conditions to validate the input:
+     - `len(guess) != 1`: Checks that user has entered only one character. If the input is larger than one, user input treated as invalid.
+     - `not guess.isalpha()`: Checks if the input contains only alphabetic characters (a-z).
+
+Validation of user input included in a try/catch block. The execution of for remaining attempts to be reduced by a count of 1 inside the start_game function as follows remained unchanged
+
+```python
+else:
+    print("No! The letter {} is not part of the secret city".format(guess))
+    remaining_attempts -= 1
+```
+
 ## Issues not resolved in testing
 
 I tested the application on various screen sizes. As it turned out, the font size and length of command-line text generated would have to be either increased or length limited in size. I was not able to find an approach to make the application responsive with something similar to media-queries.
+
+Testing for user input of username was done extensively. Validation of username input works well (test for alphabetic username or default username if user enters no username). A very special issue are usernames that contain special characters such as the German first name "Karl-Heinz" where a special character (minus sign) is combined with alphabetic characters. An entry of "Karl-Heinz" leads to message "Please enter a name using only alphabetic characters". I was not able to resolve this issue. The same error occurs when a name such as "O'Connor' is entered.
 
 # Deployment
 

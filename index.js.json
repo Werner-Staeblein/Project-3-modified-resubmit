@@ -1,6 +1,6 @@
 {
-	"pid": 862,
-	"date": "2024-10-14T12:22:18.128Z",
+	"pid": 1018,
+	"date": "2024-10-14T13:54:40.547Z",
 	"port": 8000,
 	"ip": "0.0.0.0",
 	"stats": [
@@ -11,15 +11,15 @@
 				"total": "4",
 				"app": "1.0.0"
 			},
-			"pid": 862,
+			"pid": 1018,
 			"thread": "",
 			"mode": "release",
 			"overload": 0,
-			"date": "2024-10-14T12:37:18.200Z",
-			"memory": 7.43,
+			"date": "2024-10-14T14:22:40.671Z",
+			"memory": 7.52,
 			"rm": 0,
 			"fm": 0,
-			"wm": 10,
+			"wm": 0,
 			"em": 0,
 			"mm": 0,
 			"om": 0,
@@ -37,9 +37,9 @@
 			"errors": 0,
 			"timeouts": 0,
 			"online": 1,
-			"uptime": 16,
+			"uptime": 29,
 			"download": 0,
-			"upload": 0.003
+			"upload": 0.012
 		}
 	]
 }
