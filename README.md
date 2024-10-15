@@ -92,6 +92,15 @@ After the initial/first guess of a character of the secret city, the user is sho
 
 ![letter_guessing_feature](documentation/readme/letter_guessing_feature.png)
 
+Incorrect or invalid entries by the user are reported back to the user with message "Input not valid!....". The user keeps the
+its number of attempts to guess the secret city when user input is invalid. Invalid user input is defined as user input with
+two (rather than a single) characters, user input of numbers (rather than a single character) or user input of special characters
+(such as %, &, /, +, #. *). For all those user inputs, the user is notified with message that user input is invalid. At the
+same time, the user does not "loose" on remaining attempts to guess the secret city. The user has an initial six attempts to
+guess the secret city.
+
+![letter_guessing_feature](documentation/readme/letter_guessing_feature_1.png)
+
 **Feature 4**: Remaining attempts and correct attempts shown
 User receives feedback on remaining attempts while hangman is building according to stages of the game. Visual feedback and descriptive feedback to user.
 
