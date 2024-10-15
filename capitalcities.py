@@ -1,9 +1,9 @@
 capital_cities = [
     "PARIS",
-    # "LONDON",
-    # "BERLIN",
-    # "MADRID",
-    # "ROME",
+    "LONDON",
+    "BERLIN",
+    "MADRID",
+    "ROME",
     # "MOSCOW",
     # "AMSTERDAM",
     # "VIENNA",
