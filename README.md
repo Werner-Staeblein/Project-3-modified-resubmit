@@ -106,17 +106,14 @@ User receives feedback on remaining attempts while hangman is building according
 
 ![user_feedback_on_remaining_attempts](documentation/readme/user_feedback_on_remaining_attempts_and_correct_guesses.png)
 
-**Feature 5**: User feedback on user entry of more than one letter or if letter already guessed is repeated
-User is provided feedback if more than one letter was guessed. In this case, the user looses one attempt for guessing as a result of not following the easy-to-follow game instructions.
+**Feature 5**: User feedback on user entry if letter already guessed is repeated
 
-User likewise receives feedback if letter is guessed that has already been guessed before. User is not deducted a guessing attempt if a letter is guessed that was already guessed before.
-
-![user_feedback_on_entry_of_more_than_one_letter](documentation/readme/user_feedback_on_entry_of_more_than_one_letter.png)
+User receives feedback if letter is guessed that has already been guessed before. User is not deducted a guessing attempt if a letter is guessed that was already guessed before.
 
 ![user_feedback_on_repeat_of_guess](documentation/readme/user_feedback_on_repeat_of_guess.png)
 
 **Feature 6**: Winners message and option to replay the game
-Winners message on successful guess of secret city. User has option to replay the game. A randomized capita city (secret city) is drawn from the capitalcities.py
+Winners message on successful guess of secret city. User has option to replay the game. A randomized capital city (secret city) is drawn from the capitalcities.py
 
 ![winners_message](documentation/readme/winners_message_and_repeat_option.png)
 
@@ -203,6 +200,8 @@ Initial functionality testing, still working with only ONE secret city in the ca
 **[Manual_Testing_Hangman_Page_2](documentation/readme/manual_testing_hangman_page_2.png)**
 
 **[Manual_Testing_Hangman_Page_3](documentation/readme/manual_testing_hangman_page_3.png)**
+
+**[Manual_Testing_Hangman_Page_3](documentation/readme/manual_testing_hangman_page_4.png)**
 
 4. Browser Testing			
 
