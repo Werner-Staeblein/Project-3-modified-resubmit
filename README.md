@@ -1,12 +1,12 @@
 # Capital City - CodeInstitute Python Essentials Project
 
 Capital City is a hangman game to guess the capital cities of different countries.
-The user enters one character at a time to guess a randomly picked capital city. 
+The user enters one character at a time to guess a randomly picked capital city.
 The website is built with Python.
 
-The live site can be found by following this link: **[Live Website](https://project3test-72b134b84518.herokuapp.com/)**
+The live site can be found by following this link: **[Live Website](https://project3resubmit-fe0bc33c11e9.herokuapp.com/)**
 
-The GitHub repository can be found here: **[Link to GitHub Repository](https://github.com/Werner-Staeblein/Project-3)**
+The GitHub repository can be found here: **[Link to GitHub Repository](https://github.com/Werner-Staeblein/Project-3-modified-resubmit)**
 
 ![Multi Device Mockup](documentation/readme/multi_device_mockup.png)
 
@@ -279,7 +279,7 @@ As a second step, Node.js has to be added as second and final buildpack. Python 
 Download of repository as follows:
 
 1. Log in (or sign up) to GitHub.
-2. Navigate to the GitHub Repository for this project **[Link_to_GitHub_repsitory](https://github.com/Werner-Staeblein/Project-3)** 
+2. Navigate to the GitHub Repository for this project **[Link_to_GitHub_repsitory](https://github.com/Werner-Staeblein/Project-3-modified-resubmit)** 
 3. Inside the GitHub page of the repository selected, click the green button named 'Code'. Inside the code button, click "Download ZIP".
 4. The dowloaded ZIP file can be extracted to a folder on the PC.
 
@@ -288,7 +288,7 @@ Clone repository as follows:
 1.  Inside VS Code open the explorer tab on the upper left.
 2.  Click "Clone Repository"
 3.  Inside the terminal field that shows up you can now read "Repository name (type to search)"
-4.  Inside the field where search for the repository is entered, copy and paste the name of the repository that can be found under this link: **[Link_to_GitHub_repsitory](https://github.com/Werner-Staeblein/Project-3)**
+4.  Inside the field where search for the repository is entered, copy and paste the name of the repository that can be found under this link: **[Link_to_GitHub_repsitory](https://github.com/Werner-Staeblein/Project-3-modified-resubmit)**
 
 # Credits
 
