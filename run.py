@@ -99,76 +99,66 @@ def start_game(secret_city, username):
     Input validation for length of input (no more than one character) and input
     validation for the input to be alpha, i.e. a character. The "try" block
     includes user input validation. The "except" is executed when user makes
-    invalid input (such as two characters/numbers)
+    invalid input (such as two characters/numbers).
     """
     guessed_correctly = False
 
     while True:
         secret_city = select_word()
         remaining_attempts = 6
-        guessed_letters = ""
+        guessed_letters = set()
         unique_secret_letters = set(secret_city)
 
-        while (remaining_attempts > 0 and
-               len(guessed_letters) < len(unique_secret_letters)):
+        while remaining_attempts > 0:
             try:
                 guess = input("Guess a letter of the secret city: ").upper()
 
                 # Input validation (<2 characters/must be characters)
-
                 if len(guess) != 1 or not guess.isalpha():
                     raise ValueError(
                         "Input not valid! Please enter a single letter (a-z)."
                     )
 
-                guess_in_secret_word = is_guess_in_secret_word(
-                    guess, secret_city
-                )
+                # Check if letter has already been guessed
+                if guess in guessed_letters:
+                    print(f"You have already guessed the letter {guess}")
+                    continue
 
-                if guess_in_secret_word:
-                    if guess in guessed_letters:
-                        print("You have already guessed the letter {}"
-                              .format(guess))
-                    else:
-                        print("Yes! The letter {} is part of the secret city"
-                              .format(guess))
-                        guessed_letters += guess
+                # I have to add the letters guessed to a set of letters guessed
+                guessed_letters.add(guess)
+
+                
+                if guess in unique_secret_letters:
+                    print(f"Yes! The letter {guess} is part of the secret city.")
                 else:
-                    print("No! The letter {} is not part of the secret city"
-                          .format(guess))
+                    print(f"No! The letter {guess} is not part of the secret city.")
                     remaining_attempts -= 1
 
-                print("\n{} attempts remaining\n".format(remaining_attempts))
+                print(f"\n{remaining_attempts} attempts remaining\n")
                 print(hangman_stages.get_hangman_stage(remaining_attempts))
                 print_secret_word(secret_city, guessed_letters)
-                print("\n\nNumber of correct letters guessed: {}\n".format(
-                    len(guessed_letters)))
+                print(f"\n\nNumber of correct letters guessed: {len(guessed_letters & unique_secret_letters)}\n")
 
-                if len(set(guessed_letters)) == len(set(secret_city)):
+                if unique_secret_letters <= guessed_letters:
                     print("Seems you are a master in geography!\n")
                     guessed_correctly = True
                     break
 
-            # the except block is executed when user makes invalid entry
-            # the error message for user is stored in ValueError
             except ValueError as e:
                 print(e)
 
-        else:
-            if not guessed_correctly:
-                print("--- Sorry, you have lost this game! ---\n")
+        if not guessed_correctly:
+            print("--- Sorry, you have lost this game! ---\n")
+            print(f"The word was: {secret_city}")
 
-        play_again = ask_yes_no_question(
-            "Do you want to play again? (yes/no): ")
+        play_again = ask_yes_no_question("Do you want to play again? (yes/no): ")
 
         if play_again:
             print("Starting a new game...")
             screen_clearance()
         else:
-            typewriter(
-                f"Thanks for putting your knowledge to the test {username}")
-            sys.exit(
-                "If you still want to play click 'Run Program'")
+            typewriter(f"Thanks for putting your knowledge to the test, {username}")
+            sys.exit("If you still want to play, click 'Run Program'")
 
 
 def main():
