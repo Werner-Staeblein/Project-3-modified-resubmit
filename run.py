@@ -127,17 +127,21 @@ def start_game(secret_city, username):
                 # I have to add the letters guessed to a set of letters guessed
                 guessed_letters.add(guess)
 
-                
                 if guess in unique_secret_letters:
-                    print(f"Yes! The letter {guess} is part of the secret city.")
+                    print
+                    (f"Yes! The letter {guess} is part of the secret city.")
                 else:
-                    print(f"No! The letter {guess} is not part of the secret city.")
+                    print
+                    (f"No! The letter {guess} is not part of the secret city.")
                     remaining_attempts -= 1
 
                 print(f"\n{remaining_attempts} attempts remaining\n")
                 print(hangman_stages.get_hangman_stage(remaining_attempts))
                 print_secret_word(secret_city, guessed_letters)
-                print(f"\n\nNumber of correct letters guessed: {len(guessed_letters & unique_secret_letters)}\n")
+                print(
+                    f"\n\nNumber of correct letters guessed: "
+                    f"{len(guessed_letters & unique_secret_letters)}\n"
+                )
 
                 if unique_secret_letters <= guessed_letters:
                     print("Seems you are a master in geography!\n")
@@ -151,13 +155,19 @@ def start_game(secret_city, username):
             print("--- Sorry, you have lost this game! ---\n")
             print(f"The word was: {secret_city}")
 
-        play_again = ask_yes_no_question("Do you want to play again? (yes/no): ")
+        play_again = ask_yes_no_question(
+            "Do you want to play again? "
+            "(yes/no): "
+        )
 
         if play_again:
             print("Starting a new game...")
             screen_clearance()
         else:
-            typewriter(f"Thanks for putting your knowledge to the test, {username}")
+            typewriter(
+                f"Thanks for putting your knowledge to the test, "
+                f"{username}"
+            )
             sys.exit("If you still want to play, click 'Run Program'")
 
 
