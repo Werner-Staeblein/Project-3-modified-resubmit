@@ -2,6 +2,7 @@
 
 Capital City is a hangman game to guess the capital cities of different countries.
 The user enters one character at a time to guess a randomly picked capital city.
+
 The website is built with Python.
 
 The live site can be found by following this link: **[Live Website](https://project3resubmit-fe0bc33c11e9.herokuapp.com/)**
