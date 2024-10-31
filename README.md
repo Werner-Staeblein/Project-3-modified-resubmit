@@ -158,7 +158,7 @@ In its current stage, the program is more of the nature of a MVP. Further featur
        
 **[Techsini](https://techsini.com/multi-mockup/)** Multi Device Website Mockup generator
 
-**[Browserling]([https://www.browserling.com/)** Browserling is a web-based cross-browser testing software that allows users to test website across desktip and mobile browsers such as Chrome, Firefox, Edge or Opera without downloading and installing the respective browser
+**[Browserling]([https://www.browserling.com/)** Browserling is a web-based cross-browser testing software that allows users to test website across desktop and mobile browsers such as Chrome, Firefox, Edge or Opera without downloading and installing the respective browser
 
 ### Libraries and python built-in modules used
 
@@ -202,7 +202,7 @@ Initial functionality testing, still working with only ONE secret city in the ca
 
 **[Manual_Testing_Hangman_Page_3](documentation/readme/manual_testing_hangman_page_3.png)**
 
-**[Manual_Testing_Hangman_Page_3](documentation/readme/manual_testing_hangman_page_4.png)**
+**[Manual_Testing_Hangman_Page_4](documentation/readme/manual_testing_hangman_page_4.png)**
 
 4. Browser Testing			
 

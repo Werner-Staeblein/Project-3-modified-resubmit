@@ -101,8 +101,6 @@ def start_game(secret_city, username):
     includes user input validation. The "except" is executed when user makes
     invalid input (such as two characters/numbers).
     """
-    guessed_correctly = False
-
     while True:
         secret_city = select_word()
         remaining_attempts = 6
@@ -124,15 +122,17 @@ def start_game(secret_city, username):
                     print(f"You have already guessed the letter {guess}")
                     continue
 
-                # I have to add the letters guessed to a set of letters guessed
+                # Add the guessed letter to guessed_letters set
                 guessed_letters.add(guess)
 
                 if guess in unique_secret_letters:
-                    print
-                    (f"Yes! The letter {guess} is part of the secret city.")
+                    print(
+                        f"Yes! The letter {guess} is part of the secret city."
+                    )
                 else:
-                    print
-                    (f"No! The letter {guess} is not part of the secret city.")
+                    print(
+                        f"No! Letter {guess} is not part of the secret city."
+                    )
                     remaining_attempts -= 1
 
                 print(f"\n{remaining_attempts} attempts remaining\n")
@@ -145,19 +145,17 @@ def start_game(secret_city, username):
 
                 if unique_secret_letters <= guessed_letters:
                     print("Seems you are a master in geography!\n")
-                    guessed_correctly = True
                     break
 
             except ValueError as e:
                 print(e)
 
-        if not guessed_correctly:
+        if remaining_attempts == 0:
             print("--- Sorry, you have lost this game! ---\n")
-            print(f"The word was: {secret_city}")
+            print(f"The secret city was: {secret_city}")
 
         play_again = ask_yes_no_question(
-            "Do you want to play again? "
-            "(yes/no): "
+            "Do you want to play again? (yes/no): "
         )
 
         if play_again:
