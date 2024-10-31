@@ -348,5 +348,5 @@ Special thanks to my mentor David Bowers. Incredible to see how much value I was
 
 My fellow students at CI have helped a lot with their various postings, questions, answers with myself being able to pick up ideas, avoid mistakes and stay motivated
 
-*****************
+****************
 [Back to top](#table-of-contents)
